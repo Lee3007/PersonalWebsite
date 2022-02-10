@@ -1,11 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root{
+    --almostWhite: #f2f0ee;
+    --darkGray: #212121;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+a:hover{
+    color: inherit;
+    text-decoration: none;
+
+}
+
+a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
 
 canvas{
     display:block;
@@ -20,13 +43,22 @@ canvas{
 #particles-js {
     height: 100%;
     width: 100%;
-    background-color: #212121;
+    background-color: var(--darkGray);
+    // background-color: #212121;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
 }
-  
+
+@mixin glassmorphism($transparency, $borderRadius, $blur, $borderTransparency) {
+    background: rgba(255, 255, 255, $transparency);
+    border-radius: $borderRadius;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid rgba(255, 255, 255, $borderTransparency);
+}
+
 .card{
     height: 400vh;
     width: 70%;
@@ -36,39 +68,52 @@ canvas{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
+    @include glassmorphism(0.05, 16px, 4px, 0.1);
 }
 
 .containerInitial{
-    height: 60vh;
+    height: 50vh;
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-evenly;
 }
 
+.containerText{
+    padding-top: 180px;
+    margin-left: 80px;
+}
+
+.containerImg{
+    padding-top: 80px;
+    margin-right: 40px;
+}
+
 .greetings{
-    color: white;
-    font-size: 3em;
-    font-weight: 200;
+    color: var(--almostWhite);
+    font-size: 2.5em;
+    font-weight: 300;
     text-align: left;
-    // margin-top: 300px;
     margin-left: 80px;
 }
 
 .name{
-    color: white;
+    color: var(--almostWhite);
     font-size: 7em;
     font-weight: 600;
     text-align: left;
-    margin-top: -10px;
+    margin-top: -20px;
     margin-left: 72px;
+}
+
+.description{
+    width: 50%;
+    margin-left: 80px;
+    text-align: left;
+    color: #f2f0ee;
+    font-weight: 400;
+    margin-top: 20px;
+    font-size: 20px;
 }
 
 .profpic{
@@ -76,4 +121,88 @@ canvas{
     height: 400px;
     padding-right: 30px;
     margin-right: 60px;
+}
+
+.navContainer{
+    width: 100%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px
+}
+
+.logoWrapper{
+    width: 10%;
+}
+
+.logoName,.logoSirName{
+    color: var(--almostWhite);
+}
+
+.logoName{
+    font-weight: 300;
+}
+
+.logoSirName{
+    font-weight: 600;
+}
+
+ul{
+    list-style: none;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.itemNav{
+    padding: 20px;
+    color: var(--almostWhite);
+    margin: 0px;
+    font-weight: 500;
+}
+
+@keyframes text-shadow-multicolor {
+    0%{
+      text-shadow: 0 0px 0px;
+    }
+    100%{
+      text-shadow: 0 0px 100px var(--almostWhite);
+    }
+  }
+
+.itemNav:hover{
+    animation-name: text-shadow-multicolor;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@mixin horizontalSeparator($color: #f2f0ee, $height: 2px, $opacity: 0.1){
+    height: $height;
+    border-radius: 2px;
+    background-color: rgba($color, $opacity);
+
+    width: 90%;
+
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.horizontalSeparator{
+    @include horizontalSeparator();
+}
+
+.separatorWrapper{
+    display: flex;
+    justify-content: center;
 }
