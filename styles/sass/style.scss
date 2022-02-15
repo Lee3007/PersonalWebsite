@@ -36,7 +36,7 @@ canvas{
 }
 
 .container{
-    height: 500vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -60,15 +60,15 @@ canvas{
 }
 
 .card{
-    height: 400vh;
+    height: 80vh;
     width: 70%;
     text-align: center;
     position: absolute;
-    top: 210%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    @include glassmorphism(0.05, 16px, 4px, 0.1);
+    @include glassmorphism(0.05, 6px, 5px, 0.1);
 }
 
 .containerInitial{
@@ -80,12 +80,12 @@ canvas{
 }
 
 .containerText{
-    padding-top: 180px;
+    padding-top: 200px;
     margin-left: 80px;
 }
 
 .containerImg{
-    padding-top: 80px;
+    padding-top: 180px;
     margin-right: 40px;
 }
 
@@ -159,10 +159,15 @@ ul{
     flex-direction: row;
     justify-content: end;
     align-items: center;
+    padding: 10px;
+    .link{
+        padding: 20px;
+    }
+
 }
 
 .itemNav{
-    padding: 20px;
+    // padding-top: 10px;
     color: var(--almostWhite);
     margin: 0px;
     font-weight: 500;
