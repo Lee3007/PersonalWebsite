@@ -68,26 +68,18 @@ canvas {
   align-items: center;
   justify-content: space-evenly;
 }
-
-.containerText {
-  padding-top: 200px;
+.containerInitial .containerText {
+  margin-top: 180px;
   margin-left: 80px;
 }
-
-.containerImg {
-  padding-top: 180px;
-  margin-right: 40px;
-}
-
-.greetings {
+.containerInitial .containerText .greetings {
   color: var(--almostWhite);
   font-size: 2.5em;
   font-weight: 300;
   text-align: left;
   margin-left: 80px;
 }
-
-.name {
+.containerInitial .containerText .name {
   color: var(--almostWhite);
   font-size: 7em;
   font-weight: 600;
@@ -95,8 +87,7 @@ canvas {
   margin-top: -20px;
   margin-left: 72px;
 }
-
-.description {
+.containerInitial .containerText .description {
   width: 50%;
   margin-left: 80px;
   text-align: left;
@@ -105,8 +96,11 @@ canvas {
   margin-top: 20px;
   font-size: 20px;
 }
-
-.profpic {
+.containerInitial .containerImg {
+  margin-top: 100px;
+  margin-right: 40px;
+}
+.containerInitial .containerImg .profpic {
   border-radius: 40%;
   height: 400px;
   padding-right: 30px;
@@ -121,6 +115,21 @@ canvas {
   flex-direction: row;
   justify-content: space-between;
   padding: 30px;
+}
+
+.navWrapper .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding: 10px;
+}
+.navWrapper .links .link {
+  padding: 20px;
+  cursor: pointer;
+}
+.navWrapper .links .email {
+  cursor: copy;
 }
 
 .logoWrapper {
@@ -141,17 +150,6 @@ canvas {
 
 ul {
   list-style: none;
-}
-
-.links {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  padding: 10px;
-}
-.links .link {
-  padding: 20px;
 }
 
 .itemNav {
@@ -190,6 +188,17 @@ ul {
 .separatorWrapper {
   display: flex;
   justify-content: center;
+}
+
+.containerLinks {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.containerLinks .link {
+  margin-right: 10px;
+  height: 200px;
 }
 
 /*# sourceMappingURL=style.css.map */
